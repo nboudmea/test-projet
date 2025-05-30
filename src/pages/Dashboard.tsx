@@ -56,9 +56,9 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-      {/* Header avec effet glassmorphism */}
-      <header className="border-b border-gray-700/50 dark-glass sticky top-0 z-50">
+    <div className="min-h-screen bg-black">
+      {/* Header noir */}
+      <header className="border-b border-gray-800 bg-black/95 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
@@ -82,7 +82,7 @@ const Dashboard = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => navigate("/settings")}
-                className="text-gray-400 hover:text-white hover:bg-gray-800/50"
+                className="text-gray-400 hover:text-white hover:bg-gray-900/50"
                 aria-label="Paramètres"
               >
                 <Settings className="w-5 h-5" />
@@ -112,9 +112,9 @@ const Dashboard = () => {
           </p>
         </div>
 
-        {/* Statistiques avec design moderne */}
+        {/* Statistiques en noir */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          <Card className="bg-gradient-to-br from-memento-teal/20 to-memento-teal/5 border-memento-teal/20 hover:from-memento-teal/30 hover:to-memento-teal/10 transition-all duration-300">
+          <Card className="bg-gray-900 border-gray-800 hover:bg-gray-800 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -128,7 +128,7 @@ const Dashboard = () => {
             </CardContent>
           </Card>
           
-          <Card className="bg-gradient-to-br from-memento-orange/20 to-memento-orange/5 border-memento-orange/20 hover:from-memento-orange/30 hover:to-memento-orange/10 transition-all duration-300">
+          <Card className="bg-gray-900 border-gray-800 hover:bg-gray-800 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -144,7 +144,7 @@ const Dashboard = () => {
             </CardContent>
           </Card>
           
-          <Card className="bg-gradient-to-br from-memento-yellow/20 to-memento-yellow/5 border-memento-yellow/20 hover:from-memento-yellow/30 hover:to-memento-yellow/10 transition-all duration-300">
+          <Card className="bg-gray-900 border-gray-800 hover:bg-gray-800 transition-all duration-300">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -163,7 +163,7 @@ const Dashboard = () => {
           </Card>
         </div>
 
-        {/* Barre d'outils améliorée */}
+        {/* Barre d'outils noire */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
           <div className="flex items-center space-x-4 flex-1">
             <div className="relative flex-1 max-w-md">
@@ -172,22 +172,22 @@ const Dashboard = () => {
                 placeholder="Rechercher un projet..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 bg-gray-800/50 border-gray-700 text-white placeholder-gray-400 focus:border-memento-teal"
+                className="pl-10 bg-gray-900 border-gray-800 text-white placeholder-gray-400 focus:border-memento-teal"
               />
             </div>
-            <Button variant="outline" size="sm" className="border-gray-700 text-gray-300 hover:bg-gray-800">
+            <Button variant="outline" size="sm" className="border-gray-800 bg-gray-900 text-gray-300 hover:bg-gray-800 hover:text-white">
               <Filter className="w-4 h-4 mr-2" />
               Filtrer
             </Button>
           </div>
           
           <div className="flex items-center space-x-2">
-            <div className="flex bg-gray-800/50 rounded-lg p-1">
+            <div className="flex bg-gray-900 rounded-lg p-1 border border-gray-800">
               <Button
                 variant={viewMode === 'grid' ? 'default' : 'ghost'}
                 size="sm"
                 onClick={() => setViewMode('grid')}
-                className={viewMode === 'grid' ? 'bg-memento-teal text-white' : 'text-gray-400 hover:text-white'}
+                className={viewMode === 'grid' ? 'bg-memento-teal text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800'}
               >
                 <Grid className="w-4 h-4" />
               </Button>
@@ -195,7 +195,7 @@ const Dashboard = () => {
                 variant={viewMode === 'list' ? 'default' : 'ghost'}
                 size="sm"
                 onClick={() => setViewMode('list')}
-                className={viewMode === 'list' ? 'bg-memento-teal text-white' : 'text-gray-400 hover:text-white'}
+                className={viewMode === 'list' ? 'bg-memento-teal text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800'}
               >
                 <List className="w-4 h-4" />
               </Button>
@@ -208,7 +208,7 @@ const Dashboard = () => {
                   Nouveau projet
                 </Button>
               </DialogTrigger>
-              <DialogContent className="bg-gray-800 border-gray-700 text-white">
+              <DialogContent className="bg-gray-900 border-gray-800 text-white">
                 <DialogHeader>
                   <DialogTitle className="text-xl">Créer un nouveau projet</DialogTitle>
                 </DialogHeader>
@@ -218,10 +218,10 @@ const Dashboard = () => {
                     value={newProjectName}
                     onChange={(e) => setNewProjectName(e.target.value)}
                     onKeyPress={(e) => e.key === 'Enter' && handleCreateProject()}
-                    className="bg-gray-900/50 border-gray-600 text-white placeholder-gray-400"
+                    className="bg-black border-gray-700 text-white placeholder-gray-400"
                   />
                   <div className="flex justify-end space-x-3">
-                    <Button variant="outline" onClick={() => setIsCreateDialogOpen(false)} className="border-gray-600 text-gray-300">
+                    <Button variant="outline" onClick={() => setIsCreateDialogOpen(false)} className="border-gray-700 text-gray-300 hover:bg-gray-800">
                       Annuler
                     </Button>
                     <Button onClick={handleCreateProject} className="bg-memento-teal hover:bg-memento-teal/80">
@@ -234,9 +234,9 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Grille de projets améliorée */}
+        {/* Grille de projets noire */}
         {filteredProjects.length === 0 ? (
-          <Card className="border-2 border-dashed border-gray-600 bg-gray-800/30">
+          <Card className="border-2 border-dashed border-gray-700 bg-gray-900/30">
             <CardContent className="p-16 text-center">
               <div className="w-20 h-20 bg-gradient-to-br from-memento-teal/20 to-memento-coral/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <FileAudio className="w-10 h-10 text-gray-400" />
@@ -269,7 +269,7 @@ const Dashboard = () => {
             {filteredProjects.map((project) => (
               <Card 
                 key={project.id} 
-                className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 hover:border-gray-600 transition-all duration-300 group cursor-pointer"
+                className="bg-gray-900 border-gray-800 hover:bg-gray-800 hover:border-gray-700 transition-all duration-300 group cursor-pointer"
                 onClick={() => navigate(`/workspace/${project.id}`)}
               >
                 <CardHeader className="pb-3">
@@ -304,7 +304,7 @@ const Dashboard = () => {
                         e.stopPropagation();
                         navigate(`/workspace/${project.id}`);
                       }}
-                      className="w-full bg-gray-700 hover:bg-memento-teal text-white transition-colors"
+                      className="w-full bg-gray-800 hover:bg-memento-teal text-white transition-colors"
                     >
                       Ouvrir le projet
                     </Button>
