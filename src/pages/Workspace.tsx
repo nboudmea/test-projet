@@ -79,10 +79,10 @@ const Workspace = () => {
 
   if (!currentProject) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-lg text-gray-600 mb-4">Projet non trouvé</p>
-          <Button onClick={() => navigate('/dashboard')}>
+      <div className="page-container flex items-center justify-center">
+        <div className="text-center card-dark p-8 rounded-2xl">
+          <p className="text-lg text-slate-300 mb-4">Projet non trouvé</p>
+          <Button onClick={() => navigate('/dashboard')} className="bg-memento-teal hover:bg-memento-teal/80">
             Retour au dashboard
           </Button>
         </div>
@@ -91,10 +91,10 @@ const Workspace = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
-      {/* Sidebar */}
+    <div className="page-container flex">
+      {/* Sidebar avec le nouveau style */}
       <aside className={cn(
-        "bg-white border-r border-gray-200 shadow-sm transition-all duration-300",
+        "card-dark border-r border-slate-600/50 shadow-sm transition-all duration-300",
         sidebarOpen ? "w-64" : "w-16"
       )}>
         <div className="p-4">
@@ -105,14 +105,14 @@ const Workspace = () => {
                 <div className="w-6 h-6 bg-memento-coral rounded flex items-center justify-center">
                   <Brain className="w-4 h-4 text-white" />
                 </div>
-                <span className="font-semibold text-memento-navy">Memento</span>
+                <span className="font-semibold text-white">Memento</span>
               </div>
             )}
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="text-gray-600"
+              className="text-slate-300 hover:text-white hover:bg-slate-700/50"
             >
               <Menu className="w-4 h-4" />
             </Button>
@@ -120,11 +120,11 @@ const Workspace = () => {
 
           {/* Project Info */}
           {sidebarOpen && (
-            <div className="mb-6 p-3 bg-gray-50 rounded-lg">
-              <h3 className="font-medium text-memento-navy text-sm mb-1">
+            <div className="mb-6 p-3 bg-slate-700/30 rounded-lg border border-slate-600/30">
+              <h3 className="font-medium text-white text-sm mb-1">
                 Projet actuel
               </h3>
-              <p className="text-gray-600 text-sm truncate">
+              <p className="text-slate-300 text-sm truncate">
                 {currentProject.name}
               </p>
             </div>
@@ -139,8 +139,8 @@ const Workspace = () => {
                 className={cn(
                   "w-full justify-start",
                   currentView === item.id
-                    ? "bg-memento-navy text-white"
-                    : "text-gray-600 hover:text-memento-navy hover:bg-gray-100",
+                    ? "bg-memento-teal text-white"
+                    : "text-slate-300 hover:text-white hover:bg-slate-700/50",
                   !sidebarOpen && "px-2"
                 )}
                 onClick={() => setCurrentView(item.id)}
@@ -152,11 +152,11 @@ const Workspace = () => {
           </nav>
 
           {/* Back to Dashboard */}
-          <div className="mt-8 pt-4 border-t border-gray-200">
+          <div className="mt-8 pt-4 border-t border-slate-600/50">
             <Button
               variant="ghost"
               className={cn(
-                "w-full justify-start text-gray-600 hover:text-memento-navy hover:bg-gray-100",
+                "w-full justify-start text-slate-300 hover:text-white hover:bg-slate-700/50",
                 !sidebarOpen && "px-2"
               )}
               onClick={() => navigate('/dashboard')}

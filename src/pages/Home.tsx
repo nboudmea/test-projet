@@ -44,7 +44,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-memento-navy via-memento-teal to-memento-navy">
+    <div className="page-container">
       {/* Header */}
       <header className="container mx-auto px-4 py-6">
         <nav className="flex items-center justify-between">
@@ -58,7 +58,7 @@ const Home = () => {
             <Button 
               onClick={() => navigate("/dashboard")}
               variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-memento-navy"
+              className="border-slate-500 text-white hover:bg-slate-700/50 hover:text-white"
             >
               Dashboard
             </Button>
@@ -74,7 +74,7 @@ const Home = () => {
             <span className="text-memento-yellow">audio</span> en{" "}
             <span className="text-memento-coral">apprentissage</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed max-w-3xl mx-auto">
             Memento révolutionne votre façon d'apprendre en convertissant vos enregistrements 
             audio en cours structurés, fiches de révision et quiz interactifs.
           </p>
@@ -95,14 +95,14 @@ const Home = () => {
           <h2 className="text-4xl font-bold text-white mb-4">
             Comment ça marche ?
           </h2>
-          <p className="text-xl text-white/70">
+          <p className="text-xl text-slate-300">
             Trois étapes simples pour révolutionner votre apprentissage
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {steps.map((step, index) => (
-            <Card key={index} className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/20 transition-all duration-300 group">
+            <Card key={index} className="card-dark hover:bg-slate-600/30 transition-all duration-300 group">
               <CardContent className="p-8 text-center">
                 <div className={`${step.color} w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <step.icon className="w-8 h-8 text-white" />
@@ -110,7 +110,7 @@ const Home = () => {
                 <h3 className="text-2xl font-bold text-white mb-4">
                   {step.title}
                 </h3>
-                <p className="text-white/70 leading-relaxed">
+                <p className="text-slate-300 leading-relaxed">
                   {step.description}
                 </p>
               </CardContent>
@@ -127,7 +127,7 @@ const Home = () => {
               Une IA conversationnelle 
               <span className="text-memento-yellow"> à votre service</span>
             </h2>
-            <p className="text-xl text-white/70 mb-8 leading-relaxed">
+            <p className="text-xl text-slate-300 mb-8 leading-relaxed">
               Notre assistant IA comprend le contenu de vos cours et peut répondre 
               à vos questions, créer des résumés personnalisés et vous aider dans 
               vos révisions.
@@ -141,17 +141,17 @@ const Home = () => {
               ].map((feature, index) => (
                 <div key={index} className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-memento-coral rounded-full"></div>
-                  <span className="text-white/80">{feature}</span>
+                  <span className="text-slate-300">{feature}</span>
                 </div>
               ))}
             </div>
           </div>
           <div className="relative">
-            <Card className="bg-white/10 backdrop-blur border-white/20 p-6">
+            <Card className="card-dark p-6">
               <div className="flex items-start space-x-3 mb-4">
                 <MessageSquare className="w-6 h-6 text-memento-coral mt-1" />
                 <div className="flex-1">
-                  <p className="text-white/90 bg-memento-teal/20 rounded-lg p-3">
+                  <p className="text-white bg-memento-teal/20 rounded-lg p-3">
                     Peux-tu m'expliquer le concept de photosynthèse abordé dans le cours ?
                   </p>
                 </div>
@@ -161,7 +161,7 @@ const Home = () => {
                   <Brain className="w-4 h-4 text-white" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-white/90 bg-white/10 rounded-lg p-3">
+                  <p className="text-white bg-slate-700/30 rounded-lg p-3">
                     Bien sûr ! D'après votre cours, la photosynthèse est le processus...
                   </p>
                 </div>
@@ -172,7 +172,7 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="container mx-auto px-4 py-12 border-t border-white/20">
+      <footer className="container mx-auto px-4 py-12 border-t border-slate-600/50">
         <div className="text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <div className="w-6 h-6 bg-memento-coral rounded-lg flex items-center justify-center">
@@ -180,7 +180,7 @@ const Home = () => {
             </div>
             <span className="text-lg font-bold text-white">Memento</span>
           </div>
-          <p className="text-white/60">
+          <p className="text-slate-400">
             Transformez votre façon d'apprendre avec l'IA
           </p>
         </div>

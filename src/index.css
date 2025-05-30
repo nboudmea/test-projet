@@ -56,7 +56,14 @@
     @apply border-border;
   }
   body {
-    @apply bg-black text-white font-inter;
+    @apply bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900 text-white font-inter min-h-screen;
+    background-attachment: fixed;
+  }
+  
+  /* Ensure all main containers use the consistent background */
+  .page-container {
+    @apply min-h-screen bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900;
+    background-attachment: fixed;
   }
 }
 
@@ -75,5 +82,11 @@
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .card-dark {
+    background: rgba(51, 65, 85, 0.6);
+    border: 1px solid rgba(100, 116, 139, 0.3);
+    backdrop-filter: blur(10px);
   }
 }
