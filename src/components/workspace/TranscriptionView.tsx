@@ -122,7 +122,7 @@ Cette réaction est essentielle pour la vie sur Terre car elle produit l'oxygèn
     <div className="h-full flex flex-col space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-memento-navy">Transcription</h1>
+        <h1 className="text-2xl font-bold text-white">Transcription</h1>
         <div className="flex space-x-2">
           <Button
             onClick={handleSaveTranscription}
@@ -144,18 +144,18 @@ Cette réaction est essentielle pour la vie sur Terre car elle produit l'oxygèn
 
       <div className="flex-1 grid lg:grid-cols-2 gap-6">
         {/* Audio Section */}
-        <Card>
+        <Card className="card-dark">
           <CardHeader>
-            <CardTitle className="flex items-center text-memento-navy">
+            <CardTitle className="flex items-center text-white">
               <Volume2 className="w-5 h-5 mr-2" />
               Audio
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             {/* Upload */}
-            <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
-              <Upload className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-              <p className="text-gray-600 mb-4">
+            <div className="border-2 border-dashed border-slate-600 rounded-lg p-8 text-center">
+              <Upload className="w-12 h-12 text-slate-400 mx-auto mb-4" />
+              <p className="text-slate-300 mb-4">
                 Glissez-déposez votre fichier audio ou cliquez pour sélectionner
               </p>
               <input
@@ -168,23 +168,24 @@ Cette réaction est essentielle pour la vie sur Terre car elle produit l'oxygèn
               <Button 
                 onClick={() => fileInputRef.current?.click()}
                 variant="outline"
+                className="border-slate-600 text-white hover:bg-slate-700/50"
               >
                 Sélectionner un fichier
               </Button>
             </div>
 
             {/* Audio Player Simulation */}
-            <div className="bg-gray-50 rounded-lg p-4">
+            <div className="bg-slate-700/30 rounded-lg p-4">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm text-gray-600">audio-cours.mp3</span>
-                <span className="text-sm text-gray-600">03:45 / 15:32</span>
+                <span className="text-sm text-slate-300">audio-cours.mp3</span>
+                <span className="text-sm text-slate-300">03:45 / 15:32</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Button
                   size="sm"
                   variant="outline"
                   onClick={togglePlayPause}
-                  className="w-10 h-10 rounded-full"
+                  className="w-10 h-10 rounded-full border-slate-600 text-white hover:bg-slate-700/50"
                 >
                   {isPlaying ? (
                     <Pause className="w-4 h-4" />
@@ -192,7 +193,7 @@ Cette réaction est essentielle pour la vie sur Terre car elle produit l'oxygèn
                     <Play className="w-4 h-4" />
                   )}
                 </Button>
-                <div className="flex-1 bg-gray-200 rounded-full h-2">
+                <div className="flex-1 bg-slate-600 rounded-full h-2">
                   <div className="bg-memento-teal h-2 rounded-full" style={{ width: '24%' }}></div>
                 </div>
               </div>
@@ -201,9 +202,9 @@ Cette réaction est essentielle pour la vie sur Terre car elle produit l'oxygèn
         </Card>
 
         {/* Transcription Section */}
-        <Card>
+        <Card className="card-dark">
           <CardHeader>
-            <CardTitle className="flex items-center text-memento-navy">
+            <CardTitle className="flex items-center text-white">
               <Volume2 className="w-5 h-5 mr-2" />
               Transcription
             </CardTitle>
@@ -213,7 +214,7 @@ Cette réaction est essentielle pour la vie sur Terre car elle produit l'oxygèn
               placeholder="La transcription apparaîtra ici automatiquement après l'upload de votre fichier audio..."
               value={transcriptionText}
               onChange={(e) => setTranscriptionText(e.target.value)}
-              className="min-h-[400px] resize-none font-mono text-sm leading-relaxed"
+              className="min-h-[400px] resize-none font-mono text-sm leading-relaxed bg-slate-700/50 border-slate-600 text-white placeholder-slate-400"
             />
           </CardContent>
         </Card>

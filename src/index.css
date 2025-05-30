@@ -56,13 +56,13 @@
     @apply border-border;
   }
   body {
-    @apply bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900 text-white font-inter min-h-screen;
+    @apply bg-gradient-to-br from-slate-700 via-slate-800 to-blue-800 text-white font-inter min-h-screen;
     background-attachment: fixed;
   }
   
   /* Ensure all main containers use the consistent background */
   .page-container {
-    @apply min-h-screen bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900;
+    @apply min-h-screen bg-gradient-to-br from-slate-700 via-slate-800 to-blue-800;
     background-attachment: fixed;
   }
 }

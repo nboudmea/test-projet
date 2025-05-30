@@ -28,16 +28,16 @@ const Settings = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="page-container">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 shadow-sm">
+      <header className="card-dark border-b border-slate-600/50 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center space-x-4">
             <Button
               variant="ghost"
               size="sm"
               onClick={() => navigate('/dashboard')}
-              className="text-gray-600 hover:text-memento-navy"
+              className="text-white hover:text-memento-teal hover:bg-slate-700/50"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Retour
@@ -45,7 +45,7 @@ const Settings = () => {
             <div className="w-6 h-6 bg-memento-coral rounded flex items-center justify-center">
               <Brain className="w-4 h-4 text-white" />
             </div>
-            <h1 className="text-2xl font-bold text-memento-navy">Paramètres</h1>
+            <h1 className="text-2xl font-bold text-white">Paramètres</h1>
           </div>
         </div>
       </header>
@@ -53,9 +53,9 @@ const Settings = () => {
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="space-y-6">
           {/* Profile Section */}
-          <Card>
+          <Card className="card-dark">
             <CardHeader>
-              <CardTitle className="flex items-center space-x-2 text-memento-navy">
+              <CardTitle className="flex items-center space-x-2 text-white">
                 <User className="w-5 h-5" />
                 <span>Profil utilisateur</span>
               </CardTitle>
@@ -63,24 +63,33 @@ const Settings = () => {
             <CardContent className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Nom</Label>
-                  <Input id="name" value={user?.name || ""} />
+                  <Label htmlFor="name" className="text-white">Nom</Label>
+                  <Input 
+                    id="name" 
+                    value={user?.name || ""} 
+                    className="bg-slate-700/50 border-slate-600 text-white placeholder-slate-400"
+                  />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" value={user?.email || ""} />
+                  <Label htmlFor="email" className="text-white">Email</Label>
+                  <Input 
+                    id="email" 
+                    type="email" 
+                    value={user?.email || ""} 
+                    className="bg-slate-700/50 border-slate-600 text-white placeholder-slate-400"
+                  />
                 </div>
               </div>
-              <Button className="bg-memento-teal hover:bg-memento-teal/90">
+              <Button className="bg-memento-teal hover:bg-memento-teal/90 text-white">
                 Sauvegarder les modifications
               </Button>
             </CardContent>
           </Card>
 
           {/* Notifications */}
-          <Card>
+          <Card className="card-dark">
             <CardHeader>
-              <CardTitle className="flex items-center space-x-2 text-memento-navy">
+              <CardTitle className="flex items-center space-x-2 text-white">
                 <Bell className="w-5 h-5" />
                 <span>Notifications</span>
               </CardTitle>
@@ -89,24 +98,24 @@ const Settings = () => {
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-medium">Notifications par email</p>
-                    <p className="text-sm text-gray-600">
+                    <p className="font-medium text-white">Notifications par email</p>
+                    <p className="text-sm text-slate-300">
                       Recevoir des emails pour les nouveaux quiz et fiches
                     </p>
                   </div>
-                  <Button variant="outline" size="sm">
+                  <Button variant="outline" size="sm" className="border-slate-600 text-white hover:bg-slate-700/50">
                     Activé
                   </Button>
                 </div>
-                <Separator />
+                <Separator className="bg-slate-600/50" />
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-medium">Rappels d'étude</p>
-                    <p className="text-sm text-gray-600">
+                    <p className="font-medium text-white">Rappels d'étude</p>
+                    <p className="text-sm text-slate-300">
                       Rappels quotidiens pour réviser vos fiches
                     </p>
                   </div>
-                  <Button variant="outline" size="sm">
+                  <Button variant="outline" size="sm" className="border-slate-600 text-white hover:bg-slate-700/50">
                     Désactivé
                   </Button>
                 </div>
@@ -115,9 +124,9 @@ const Settings = () => {
           </Card>
 
           {/* Privacy & Security */}
-          <Card>
+          <Card className="card-dark">
             <CardHeader>
-              <CardTitle className="flex items-center space-x-2 text-memento-navy">
+              <CardTitle className="flex items-center space-x-2 text-white">
                 <Shield className="w-5 h-5" />
                 <span>Confidentialité et sécurité</span>
               </CardTitle>
@@ -126,20 +135,20 @@ const Settings = () => {
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-medium">Partage des données d'apprentissage</p>
-                    <p className="text-sm text-gray-600">
+                    <p className="font-medium text-white">Partage des données d'apprentissage</p>
+                    <p className="text-sm text-slate-300">
                       Permettre l'amélioration de l'IA avec vos données anonymisées
                     </p>
                   </div>
-                  <Button variant="outline" size="sm">
+                  <Button variant="outline" size="sm" className="border-slate-600 text-white hover:bg-slate-700/50">
                     Activé
                   </Button>
                 </div>
-                <Separator />
-                <Button variant="outline" className="w-full">
+                <Separator className="bg-slate-600/50" />
+                <Button variant="outline" className="w-full border-slate-600 text-white hover:bg-slate-700/50">
                   Télécharger mes données
                 </Button>
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full border-slate-600 text-white hover:bg-slate-700/50">
                   Modifier le mot de passe
                 </Button>
               </div>
@@ -147,9 +156,9 @@ const Settings = () => {
           </Card>
 
           {/* IA Settings */}
-          <Card>
+          <Card className="card-dark">
             <CardHeader>
-              <CardTitle className="flex items-center space-x-2 text-memento-navy">
+              <CardTitle className="flex items-center space-x-2 text-white">
                 <Brain className="w-5 h-5" />
                 <span>Paramètres IA</span>
               </CardTitle>
@@ -157,8 +166,8 @@ const Settings = () => {
             <CardContent className="space-y-4">
               <div className="space-y-4">
                 <div>
-                  <Label htmlFor="difficulty">Niveau de difficulté par défaut</Label>
-                  <select className="w-full mt-1 p-2 border border-gray-300 rounded-md">
+                  <Label htmlFor="difficulty" className="text-white">Niveau de difficulté par défaut</Label>
+                  <select className="w-full mt-1 p-2 bg-slate-700/50 border border-slate-600 rounded-md text-white">
                     <option>Facile</option>
                     <option>Moyen</option>
                     <option>Difficile</option>
@@ -166,8 +175,8 @@ const Settings = () => {
                   </select>
                 </div>
                 <div>
-                  <Label htmlFor="language">Langue de l'IA</Label>
-                  <select className="w-full mt-1 p-2 border border-gray-300 rounded-md">
+                  <Label htmlFor="language" className="text-white">Langue de l'IA</Label>
+                  <select className="w-full mt-1 p-2 bg-slate-700/50 border border-slate-600 rounded-md text-white">
                     <option>Français</option>
                     <option>Anglais</option>
                     <option>Espagnol</option>
@@ -178,9 +187,9 @@ const Settings = () => {
           </Card>
 
           {/* Danger Zone */}
-          <Card className="border-red-200">
+          <Card className="card-dark border-red-500/50">
             <CardHeader>
-              <CardTitle className="flex items-center space-x-2 text-red-600">
+              <CardTitle className="flex items-center space-x-2 text-red-400">
                 <Trash2 className="w-5 h-5" />
                 <span>Zone de danger</span>
               </CardTitle>
@@ -188,26 +197,28 @@ const Settings = () => {
             <CardContent className="space-y-4">
               <div className="space-y-4">
                 <div>
-                  <p className="font-medium text-red-800">Supprimer le compte</p>
-                  <p className="text-sm text-red-600 mb-3">
+                  <p className="font-medium text-red-300">Supprimer le compte</p>
+                  <p className="text-sm text-red-400 mb-3">
                     Cette action supprimera définitivement votre compte et toutes vos données.
                   </p>
                   <Button 
                     variant="destructive"
                     onClick={handleDeleteAccount}
+                    className="bg-red-600 hover:bg-red-700 text-white"
                   >
                     Supprimer mon compte
                   </Button>
                 </div>
-                <Separator />
+                <Separator className="bg-slate-600/50" />
                 <div>
-                  <p className="font-medium text-gray-800">Déconnexion</p>
-                  <p className="text-sm text-gray-600 mb-3">
+                  <p className="font-medium text-white">Déconnexion</p>
+                  <p className="text-sm text-slate-300 mb-3">
                     Se déconnecter de cette session.
                   </p>
                   <Button 
                     variant="outline"
                     onClick={handleLogout}
+                    className="border-slate-600 text-white hover:bg-slate-700/50"
                   >
                     Se déconnecter
                   </Button>
