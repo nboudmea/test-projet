@@ -1,73 +1,171 @@
-# Welcome to your Lovable project
 
-## Project info
+# 🧠 Memento - Transformez votre audio en apprentissage
 
-**URL**: https://lovable.dev/projects/8cec51f0-2d97-4336-b939-d1ff40317364
+Memento est une application web moderne qui révolutionne l'apprentissage en transformant vos enregistrements audio en contenus éducatifs structurés : transcriptions, fiches de révision et quiz interactifs.
 
-## How can I edit this code?
+## ✨ Fonctionnalités
 
-There are several ways of editing your application.
+### 🎯 Pages principales
+- **Home** : Landing page avec présentation du produit et navigation
+- **Dashboard** : Gestion des projets d'apprentissage
+- **Workspace** : Environnement de travail complet avec sidebar navigationnelle
+- **Settings** : Configuration du profil et préférences
 
-**Use Lovable**
+### 🔧 Workspace intégré
+- **Transcription** : Upload audio et édition de transcription
+- **Fiches** : Système de flashcards avec retournement interactif
+- **Quiz** : Questionnaires interactifs avec scoring
+- **Chat IA** : Assistant conversationnel style ChatGPT contextualisé
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8cec51f0-2d97-4336-b939-d1ff40317364) and start prompting.
+### 🎨 Design & UX
+- **Palette Memento** : Navy (#264653), Teal (#2a9d8f), Yellow (#e9c46a), Orange (#f4a261), Coral (#e76f51)
+- **Typographie** : Inter font family
+- **Animations** : Transitions fluides et micro-interactions
+- **Responsive** : Design adaptatif mobile/tablette/desktop
+- **Accessibilité** : Conforme WCAG 2.1
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠 Technologies
 
-**Use your preferred IDE**
+- **Frontend** : React 18+ avec TypeScript
+- **Styling** : Tailwind CSS + shadcn/ui components
+- **Routing** : React Router v6
+- **State Management** : Zustand avec persistance
+- **Build Tool** : Vite
+- **Icons** : Lucide React
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🚀 Installation et démarrage
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prérequis
+- Node.js 18+
+- npm ou yarn
 
-Follow these steps:
+### Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+# Cloner le projet
+git clone <votre-repo-url>
+cd memento
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Installer les dépendances
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Lancer en mode développement
 npm run dev
+
+# Build pour production
+npm run build
+
+# Preview du build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+### Scripts disponibles
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm run dev          # Serveur de développement
+npm run build        # Build de production  
+npm run preview      # Preview du build
+npm run lint         # Linting ESLint
+```
 
-**Use GitHub Codespaces**
+## 📁 Structure du projet
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+src/
+├── components/           # Composants réutilisables
+│   ├── ui/              # Composants shadcn/ui
+│   └── workspace/       # Composants spécifiques au workspace
+├── pages/               # Pages principales
+├── store/               # Store Zustand
+├── lib/                 # Utilitaires
+├── hooks/               # Hooks personnalisés
+└── main.tsx            # Point d'entrée
+```
 
-## What technologies are used for this project?
+## 🎮 Utilisation
 
-This project is built with:
+### Démarrage rapide
+1. Ouvrez l'application sur `http://localhost:8080`
+2. Cliquez sur "Commencer maintenant" (login automatique en demo)
+3. Créez votre premier projet depuis le dashboard
+4. Uploadez un fichier audio dans l'onglet Transcription
+5. Générez automatiquement fiches et quiz
+6. Utilisez le chat IA pour poser des questions sur votre contenu
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Navigation Workspace
+- **Sidebar** : Navigation entre les différentes vues
+- **Transcription** : Lecteur audio + éditeur de texte
+- **Fiches** : Système de flashcards interactif
+- **Quiz** : Questions à choix multiples avec explications
+- **Chat** : Assistant IA contextuel
 
-## How can I deploy this project?
+## 🔧 Configuration
 
-Simply open [Lovable](https://lovable.dev/projects/8cec51f0-2d97-4336-b939-d1ff40317364) and click on Share -> Publish.
+### Couleurs personnalisées
+Les couleurs Memento sont configurées dans `tailwind.config.ts` :
 
-## Can I connect a custom domain to my Lovable project?
+```typescript
+memento: {
+  navy: '#264653',
+  teal: '#2a9d8f', 
+  yellow: '#e9c46a',
+  orange: '#f4a261',
+  coral: '#e76f51'
+}
+```
 
-Yes, you can!
+### Store Zustand
+Le state global est géré via Zustand avec persistance locale :
+- Authentification utilisateur
+- Gestion des projets
+- Messages du chat
+- État de l'interface
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🎨 Composants clés
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### AudioPlayer
+Lecteur audio simulé avec contrôles play/pause et barre de progression.
+
+### FlashcardsView
+Système de cartes retournables avec difficulté et tags, animation flip.
+
+### QuizView  
+Interface de quiz progressive avec scoring, explications et navigation.
+
+### ChatView
+Chat conversationnel avec avatar IA, historique persistant et questions suggérées.
+
+## 📱 Responsive Design
+
+- **Mobile** : Navigation adaptée, sidebar collapsible
+- **Tablette** : Grille ajustée, optimisation touch
+- **Desktop** : Expérience complète, sidebar fixe
+
+## ♿ Accessibilité
+
+- Contraste WCAG AA
+- Navigation clavier
+- Attributs ARIA
+- Labels sémantiques
+- Focus management
+
+## 🔮 Évolutions futures
+
+- [ ] Intégration API de transcription réelle
+- [ ] Système d'authentification complet  
+- [ ] Partage de projets entre utilisateurs
+- [ ] Analytics d'apprentissage
+- [ ] Export PDF des fiches
+- [ ] Mode hors-ligne avec synchronisation
+
+## 📄 Licence
+
+MIT License - voir le fichier LICENSE pour plus de détails.
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! Merci de suivre les guidelines de développement et de tester vos modifications.
+
+---
+
+**Memento** - Transformez votre façon d'apprendre avec l'IA 🚀
